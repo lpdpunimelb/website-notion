@@ -11,6 +11,7 @@ import { NotionRenderer } from "react-notion-x";
 import TweetEmbed from "react-tweet-embed";
 
 import { Loading } from "./Loading";
+import Footer from "./Footer";
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -141,6 +142,8 @@ export const NotionPage = ({
         // NOTE: custom images will only take effect if previewImages is true and
         // if the image has a valid preview image defined in recordMap.preview_images[src]
       />
+
+      <Footer />
     </>
   );
 };
