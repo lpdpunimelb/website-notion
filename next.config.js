@@ -16,6 +16,9 @@ module.exports = withBundleAnalyzer({
     formats: ["image/avif", "image/webp"],
   },
   env: {
-    websiteTitle: "LPDP Unimelb",
+    websiteTitle: process.env.NEXT_PUBLIC_WEBSITE_TITLE ?? "LPDP Unimelb",
+    rootPageId:
+      process.env.NEXT_PUBLIC_ROOT_PAGE_ID ??
+      "5c538bee9c7140d5ab74e2f571c29f2a",
   },
 });

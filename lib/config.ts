@@ -1,7 +1,7 @@
 // TODO: change these to your own values
 // NOTE: rootNotionSpaceId is optional; set it to undefined if you don't want to
 // use it.
-export const rootNotionPageId = "fea00fbfd6354c33b11da5f995d5b995";
+export const rootNotionPageId = process.env.rootPageId;
 export const rootNotionSpaceId = undefined; // 'fde5ac74-eea3-4527-8f00-4482710e1af3'
 
 // NOTE: having this enabled can be pretty expensive as it re-generates preview
