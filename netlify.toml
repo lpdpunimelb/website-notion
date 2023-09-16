@@ -1,0 +1,7 @@
+[build]
+  command = "yarn build"
+  publish = ".next"
+
+[functions]
+  external_node_modules = ["sharp"]
+  included_files = ["node_modules/sharp/**/*"]
