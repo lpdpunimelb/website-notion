@@ -20,5 +20,8 @@ module.exports = withBundleAnalyzer({
     rootPageId:
       process.env.NEXT_PUBLIC_ROOT_PAGE_ID ??
       "5c538bee9c7140d5ab74e2f571c29f2a",
+    subjectReviewsGappsScriptUrl:
+      process.env.NEXT_PUBLIC_SUBJECT_REVIEWS_GAPPS_URL ??
+      "https://script.google.com/macros/s/AKfycbwl2grBT673-fPCRjR1LpNyPUyPKizN5b5jsTmzalaAg_fkaBWkR7Y89QxNmoXP_HDy/exec",
   },
 });
