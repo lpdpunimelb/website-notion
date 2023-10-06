@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 
 export async function getStaticProps() {
@@ -18,6 +19,9 @@ export async function getStaticProps() {
 export default function SubjectReviewsHome({ faculties }) {
   return (
     <div className="h-screen flex flex-col divide-y">
+      <Head>
+        <title>Subject Reviews | LPDP Unimelb</title>
+      </Head>
       <div className="flex-1 overflow-auto">
         <div className="container m-auto max-w-6xl">
           <div className="py-5 xl:px-0 px-3">
@@ -34,7 +38,7 @@ export default function SubjectReviewsHome({ faculties }) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
             {Object.keys(faculties).map((slug) => (
-              <Link href={`/subject-reviews/${slug}`}>
+              <Link href={`/subject-reviews/${slug}`} key={slug}>
                 <div className="px-3 py-5 rounded bg-sky-600 text-white">
                   {faculties[slug]}
                 </div>

@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import SubjectReviews from "../../components/SubjectReviews";
 import Link from "next/link";
+import Head from "next/head";
 
 const FACULTIES = [
   "architecture-building-and-planning",
@@ -17,7 +18,7 @@ const FACULTIES = [
 export async function getStaticPaths() {
   return {
     paths: FACULTIES.map((facultySlug) => ({ params: { facultySlug } })),
-    fallback: true,
+    fallback: "blocking",
   };
 }
 
@@ -30,8 +31,8 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      facultyName,
-      reviews,
+      facultyName: facultyName ?? facultySlug,
+      reviews: reviews ?? {},
     },
     revalidate: 3600, // In seconds
   };
@@ -80,6 +81,9 @@ export default function SubjectReviewsPage({ facultyName, reviews }) {
 
   return (
     <div className="h-screen flex flex-col">
+      <Head>
+        <title>{facultyName} - Subject Reviews | LPDP Unimelb</title>
+      </Head>
       <div className="flex-1 overflow-auto">
         <div className="container m-auto max-w-6xl">
           <div className="py-5 xl:px-0 px-4">
@@ -109,6 +113,7 @@ export default function SubjectReviewsPage({ facultyName, reviews }) {
         <div className="m-auto my-6 max-w-6xl xl:px-0 px-4 flex flex-col gap-8">
           {Object.keys(filteredSubjects).map((subjectCode) => (
             <SubjectReviews
+              key={subjectCode}
               subjectCode={subjectCode}
               reviews={reviews[subjectCode]}
             />
