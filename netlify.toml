@@ -11,3 +11,9 @@
   to = "https://wamtogpa.lpdpunimelb.com/"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/gcal"
+  to = "https://calendar.google.com/calendar/u/0?cid=OTE4MjRiMDBkNThhYmE1ZmRmN2FhYWNhM2U4NzI0MmNlNjI1MGY0ODg4OTdmZTZhODU0N2U0ZjhlNDIwOGU4MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+  status = 302
+  force = true
